@@ -37,7 +37,7 @@ void servo_cb( const geometry_msgs::Twist& msg)
 {
   float vel=0;
   vel=msg.linear.x; 
-  if(vel>20)// Write only if Value exceeds a threshold
+  if(vel>10)// Write only if Value exceeds a threshold
   {
     servo.write(vel); //set servo angle, should be from 0-180  
   }
@@ -78,8 +78,8 @@ void setup()
 
 void loop(){
   //Read ADC Values
-  adc_msg.adc2=averageAnalog(2);//Read the contents of Pin2 and 3.
-  adc_msg.adc3=averageAnalog(3);
+  adc_msg.adc0=averageAnalog(0);//Read the contents of Pin2 and 3.
+  adc_msg.adc1=averageAnalog(1);
   brk_Pub.publish(&adc_msg);//Publish to brakeInfo topic
 
   nh.spinOnce();  //Node Handle Spin
