@@ -11,3 +11,4 @@ Update (25/10/2016):
 4. Servo 8 has servo threshold reduced to 10, intial velocity as 0. Also has Servo brake read capability.
 5. Reads Left brake info at ADC1. Range 140-275
 6. Reads Right Brake Info at ADC0. Range 130-300. 
+7. 29/10 added brakeInfo now publishes under roboteq_driver/brakeInfo
